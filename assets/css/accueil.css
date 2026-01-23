@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Archivo";
+}
+
+:root {
+  --black: rgb(0, 0, 0);
+  --grey: rgb(15, 15, 15);
+  --white: #dfdfdf;
+  --red: red;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  position: relative;
+  min-height: 100vh;
+}
+
+/*BACK----------------------------------------*/
+
+.background-text {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  text-transform: uppercase;
+  background-image: url(../img/logo.me4.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+}
+
+.backTitle {
+  font-size: 13.8rem;
+  font-weight: 1000;
+  font-stretch: ultra-expanded;
+  margin-top: 10vw;
+  color: var(--red);
+  text-shadow: 0px 0px 6px red;
+}
+
+/*BACK----------------------------------------*/
+
+section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 1;
+}
+
+/*NAVIGATION----------------------------------*/
+
+h1 {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--black);
+  font-stretch: semi-expanded;
+  margin: 0;
+  padding: 1rem;
+  text-shadow: 0px 0px 3px rgb(116, 116, 116);
+}
+
+nav {
+  width: 50vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10rem;
+}
+
+.boutonNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.boutonNav a {
+  text-decoration: none;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  width: fit-content;
+  padding: 0 0.4rem 0.5rem 0.4rem;
+  transition: all 0.4s ease;
+  background-color: transparent;
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-stretch: semi-expanded;
+}
+
+.boutonNav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--black);
+  transition: width 0.4s ease;
+}
+
+.boutonNav a:hover {
+  font-size: 1.4rem;
+  transform: translateX(10px);
+}
+
+.boutonNav a:hover::after {
+  width: 100%;
+}
+
+/*NAVIGATION----------------------------------*/
+
+/*COUVERTURE + CV-----------------------------*/
+
+.couverture {
+  background-color: transparent;
+  background-image: url(../img/effect1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem;
+  width: fit-content;
+  border: solid 2px var(--black);
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1rem;
+  transition: 0.3s;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-stretch: semi-expanded;
+  font-weight: 600;
+}
+
+.cv svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--black);
+  transition: 0.3s;
+}
+
+.cv:hover {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.cv:hover svg {
+  fill: var(--white);
+}
+
+/*COUVERTURE + CV-----------------------------*/

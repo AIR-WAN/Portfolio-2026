@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --black: rgb(0, 0, 0);
+  --grey2: rgb(172, 172, 172);
+  --grey: rgb(205, 205, 205);
+  --white: rgb(223, 223, 223);
+  --red: red;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  text-transform: uppercase;
+  background-image: url(../img/logo.me4.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  z-index: -1;
+}
+
+/*HEADER------------------------------------------------*/
+
+header {
+  height: 6vh;
+  background: rgba(255, 255, 255, 0.534);
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(149, 117, 117, 0.3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  transition: all 0.4s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1rem;
+  transition: 0.4s;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-stretch: semi-expanded;
+  font-weight: 600;
+}
+
+a:hover {
+  font-weight: 700;
+}
+/*HEADER------------------------------------------------*/
+
+h1 {
+  font-weight: 1000;
+  font-stretch: ultra-expanded;
+  font-family: "Archivo";
+  padding-top: 6rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5rem;
+  padding-bottom: 4rem;
+  color: var(--red);
+  text-shadow: 0px 0px 6px red;
+}
+
+/*BOUTONS FILTRES---------------------------------------*/
+.filtres {
+  display: flex;
+  align-content: center;
+  gap: 3rem;
+  margin-bottom: 6rem;
+  justify-content: center;
+  background-color: transparent;
+  padding: 1rem 0;
+  position: relative; /* ⭐ AJOUT : nécessaire pour la bulle */
+}
+
+/* ⭐ NOUVEAU : Bulle mobile qui se déplace */
+.filtres::before {
+  content: "";
+  position: absolute;
+  left: var(--bubble-left, 0);
+  top: var(--bubble-top, 0);
+  width: var(--bubble-width, 0);
+  height: var(--bubble-height, 0);
+  background: var(--bubble-bg, rgba(255, 255, 255, 0.2));
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: none; /* ⭐ MODIFIÉ : Pas de transition par défaut */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ⭐ NOUVEAU : Active la transition seulement après le chargement */
+.filtres.ready::before {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filtres button {
+  background-color: transparent;
+  border: transparent;
+  padding: 0.7rem 1.2rem;
+  color: var(--black);
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: font-weight 0.5s, background-color 0.5s ease; /* ⭐ MODIFIÉ : ajout transition pour hover */
+  font-family: "Archivo";
+  font-stretch: semi-expanded;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1; /* ⭐ AJOUT : boutons au-dessus de la bulle */
+}
+
+.filtres button:hover {
+  background-color: rgba(
+    187,
+    187,
+    187,
+    0.3
+  ); /* ⭐ MODIFIÉ : hover plus subtil */
+  border-radius: 16px;
+}
+
+/* ⭐ NOUVEAU : Désactiver le hover sur le bouton actif */
+.filtres button.active:hover {
+  background-color: transparent;
+}
+
+.filtres button.active {
+  font-weight: 800; /* ⭐ MODIFIÉ : plus de style de fond */
+  color: var(--black);
+}
+
+/*BOUTONS FILTRES---------------------------------------*/
+
+/*CARTES------------------------------------------------*/
+div.image-container {
+  width: 15rem;
+  height: 12rem;
+  overflow: hidden;
+}
+
+div.carte-projet {
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--grey);
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition-duration: 0.5s;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+div.carte-projet:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.176);
+  background: rgba(172, 172, 172, 0.5);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.name,
+.outil,
+.tag {
+  font-family: "Archivo";
+  font-stretch: semi-expanded;
+}
+
+.name {
+  font-size: 17px;
+}
+
+#projetCard {
+  display: grid;
+  grid-template-columns: repeat(4, 0fr);
+  gap: 2rem;
+  justify-content: center;
+  background-color: transparent;
+}
+
+/*CARTES------------------------------------------------*/
+
+/*TEXTES CARTES-----------------------------------------*/
+h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  padding-bottom: 1.5rem;
+}
+
+p.outil {
+  padding-bottom: 1rem;
+  font-size: 15px;
+}
+
+p.tag {
+  display: inline;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 10px;
+  background-color: var(--red);
+  color: white;
+  padding: 0.5rem;
+  font-family: "Archivo";
+  font-stretch: semi-expanded;
+  border-radius: 8px;
+}
+/*TEXTES CARTES-----------------------------------------*/
