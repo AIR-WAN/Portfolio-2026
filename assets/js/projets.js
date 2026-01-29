@@ -40,13 +40,13 @@ const projects = [
     lien: "assets/projects.page/parkease.html",
   },
   {
-  name: "Culture & Co",
-  date: 2025,
-  tag: ["UX/UI"],
-  outil: "Création d'une maquette pour une application fictive",
-  image: "./assets/img/logoculture.png",
-  lien: "assets/projects.page/culture.html",
-},
+    name: "Culture & Co",
+    date: 2025,
+    tag: ["UX/UI"],
+    outil: "Création d'une maquette pour une application fictive",
+    image: "./assets/img/logo_culture.png",
+    lien: "assets/projects.page/culture.html",
+  },
 ];
 
 function carteProject(listeDeProjets) {
