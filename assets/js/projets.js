@@ -2,7 +2,7 @@ const projects = [
   {
     name: "Babyboi",
     date: 2025,
-    tag: "Design Graphique",
+    tag: ["Design Graphique"],
     outil: "Cover concept inspired by the album Bad of Michael Jackson",
     image: "./assets/img/carti_cover.jpg",
     lien: "assets/projects.page/carti.html",
@@ -10,15 +10,15 @@ const projects = [
   {
     name: "Street Fusion",
     date: 2025,
-    tag: "UX/UI",
+    tag: ["HTML/CSS"],
     outil: "Création d'un site web pour un foodtruck fictif",
-    image: "./assets/img/",
-    lien: "assets/projects.page/.html",
+    image: "./assets/img/logo_streetfusion.png",
+    lien: "assets/projects.page/foodtruck.html",
   },
   {
     name: "The Music Times",
     date: 2025,
-    tag: "Design Graphique",
+    tag: ["Design Graphique"],
     outil: "Conception d'une première page de journal",
     image: "./assets/img/page de j.jpg",
     lien: "assets/projects.page/journal.html",
@@ -26,25 +26,27 @@ const projects = [
   {
     name: "Nostalgia",
     date: 2025,
-    tag: "Design Graphique",
+    tag: ["Design Graphique"],
     outil: "Projet personnel pour un album fictif",
     image: "./assets/img/cover cd.png",
     lien: "assets/projects.page/cd.html",
   },
   {
-    name: "Mod Minecraft",
+    name: "Parkease",
     date: 2025,
-    tag: "Design 3D",
-    outil: "Blockbench",
-    image: "./assets/img/talkie.png",
+    tag: ["UX/UI"],
+    outil: "Création d'une maquette pour une application mobile fictive",
+    image: "./assets/img/logo_parkease.png",
+    lien: "assets/projects.page/parkease.html",
   },
   {
-    name: "Parkeasee",
-    date: 2025,
-    tag: "UX/UI",
-    outil: "Illustrator",
-    image: "./assets/img/parkeasee.png",
-  },
+  name: "Culture & Co",
+  date: 2025,
+  tag: ["UX/UI"],
+  outil: "Création d'une maquette pour une application fictive",
+  image: "./assets/img/logoculture.png",
+  lien: "assets/projects.page/culture.html",
+},
 ];
 
 function carteProject(listeDeProjets) {
@@ -76,7 +78,7 @@ function carteProject(listeDeProjets) {
 
     const tag = document.createElement("p");
     tag.className = "tag";
-    tag.textContent = projet.tag;
+    tag.textContent = projet.tag.join(" • ");
 
     const outil = document.createElement("p");
     outil.className = "outil";
@@ -161,7 +163,7 @@ boutonsFiltre.forEach(function (bouton) {
       carteProject(projects);
     } else {
       const projetsFiltres = projects.filter(function (projet) {
-        return projet.tag === tagSelectionne;
+        return projet.tag.includes(tagSelectionne);
       });
       carteProject(projetsFiltres);
     }
