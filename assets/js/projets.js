@@ -3,7 +3,7 @@ const projects = [
     name: "Babyboi",
     date: 2025,
     tag: ["Design Graphique"],
-    outil: "Cover concept inspired by the album Bad of Michael Jackson",
+    outil: "Conception d'une cover pour un album fictif",
     image: "/assets/img/carti_cover.jpg",
     lien: "assets/projects.page/carti.html",
   },
