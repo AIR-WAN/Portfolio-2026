@@ -24,6 +24,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow-x: hidden;
+  padding-top: 3rem; /* Hauteur du header */
 }
 
 .background {
@@ -65,9 +66,11 @@ header {
   justify-content: space-around;
   padding: 1rem 2rem;
   transition: all 0.4s ease;
-  position: sticky;
+  position: fixed; /* Changé de sticky à fixed */
   top: 0;
-  z-index: 100;
+  left: 0; /* Ajouté */
+  right: 0; /* Ajouté */
+  z-index: 1000;
   height: 3rem;
 }
 

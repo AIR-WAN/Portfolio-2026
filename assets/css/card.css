@@ -130,14 +130,14 @@ header {
 }
 
 .card-front {
-  background-image: url(../img/Fichier\ 23.png);
+  background-image: url(../doc/front_card_final.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .card-back {
-  background-image: url(../img/Fichier\ 27.png);
+  background-image: url(../doc/back_card_final.png);
   background-size: cover;
   background-repeat: no-repeat;
   transform: rotateY(180deg);
