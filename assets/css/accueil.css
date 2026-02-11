@@ -22,6 +22,7 @@ body {
 /*BACK----------------------------------------*/
 
 .background-text {
+  top: 2rem;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -89,9 +90,9 @@ nav {
 .boutonNav a {
   text-decoration: none;
   color: var(--black);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   margin-left: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   width: fit-content;
   padding: 0 0.4rem 0.5rem 0.4rem;
   transition: all 0.4s ease;

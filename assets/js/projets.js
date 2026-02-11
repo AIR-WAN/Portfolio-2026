@@ -4,15 +4,15 @@ const projects = [
     date: 2025,
     tag: ["Design Graphique"],
     outil: "Cover concept inspired by the album Bad of Michael Jackson",
-    image: "./assets/img/carti_cover.jpg",
+    image: "/assets/img/carti_cover.jpg",
     lien: "assets/projects.page/carti.html",
   },
   {
     name: "Street Fusion",
     date: 2025,
-    tag: ["HTML/CSS"],
+    tag: ["UX/UI", "HTML/CSS"],
     outil: "Création d'un site web pour un foodtruck fictif",
-    image: "./assets/img/logo_streetfusion.png",
+    image: "/assets/img/logo_streetfusion.png",
     lien: "assets/projects.page/foodtruck.html",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     date: 2025,
     tag: ["Design Graphique"],
     outil: "Conception d'une première page de journal",
-    image: "./assets/img/page de j.jpg",
+    image: "/assets/img/page de j.jpg",
     lien: "assets/projects.page/journal.html",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     date: 2025,
     tag: ["Design Graphique"],
     outil: "Projet personnel pour un album fictif",
-    image: "./assets/img/cover cd.png",
+    image: "/assets/img/cover cd.png",
     lien: "assets/projects.page/cd.html",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     date: 2025,
     tag: ["UX/UI"],
     outil: "Création d'une maquette pour une application mobile fictive",
-    image: "./assets/img/logo_parkease.png",
+    image: "/assets/img/logo_parkease.png",
     lien: "assets/projects.page/parkease.html",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     date: 2025,
     tag: ["UX/UI"],
     outil: "Création d'une maquette pour une application fictive",
-    image: "./assets/img/logo_culture.png",
+    image: "/assets/img/rap_logo2.png",
     lien: "assets/projects.page/culture.html",
   },
 ];

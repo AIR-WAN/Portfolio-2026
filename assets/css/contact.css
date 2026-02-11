@@ -23,6 +23,7 @@ body {
 }
 
 .background {
+  top: 2rem;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -43,25 +44,24 @@ body {
 /*HEADER------------------------------------------------*/
 
 header {
-  background: rgba(255, 255, 255, 0.534);
-  border-bottom-right-radius: 16px;
-  border-bottom-left-radius: 16px;
+  background: transparent;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(11.6px);
   -webkit-backdrop-filter: blur(11.6px);
-  border: 1px solid rgba(149, 117, 117, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2rem;
   transition: all 0.4s ease;
   position: sticky;
   top: 0;
   z-index: 100;
+  height: 3rem;
 }
 
-a {
+.btn_head {
   text-decoration: none;
   color: var(--black);
   font-size: 1rem;
@@ -71,10 +71,32 @@ a {
   font-family: "Archivo";
   font-stretch: semi-expanded;
   font-weight: 600;
+  position: relative;  /* Ajouté pour le positionnement du ::after */
+  padding-bottom: 0.2rem;  /* Espace pour la ligne */
 }
 
-a:hover {
+.btn_head::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--black);
+  transition: width 0.4s ease;
+}
+
+.btn_head:hover {
   font-weight: 700;
+}
+
+.btn_head:hover::after {
+  width: 100%;
+}
+
+
+.btn_head.active::after {
+  width: 100%;  /* Le trait est visible en permanence */
 }
 /*HEADER------------------------------------------------*/
 
@@ -82,11 +104,109 @@ h1 {
   font-weight: 1000;
   font-stretch: ultra-expanded;
   font-family: "Archivo";
-  padding-top: 6rem;
+  padding-top: 5rem;
   text-transform: uppercase;
-  text-align: center;
   font-size: 5rem;
   padding-bottom: 4rem;
   color: var(--red);
   text-shadow: 0px 0px 6px red;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 1;
+}
+
+.info {
+  width: 40vw; /* 40% de la largeur de l'écran */
+  height: 94vh;
+  background-color: transparent;
+  background-image: url(../img/nokia.png);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formulaire {
+  width: 60vw; /* 60% de la largeur de l'écran */
+  height: 94vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+.div1 {
+  background-color: transparent;
+  width: 50%;
+  height: auto;
+  padding-top: 19rem;
+}
+
+.div2 {
+  background-color: transparent;
+  width: 50%;
+  height: auto;
+  padding-top: 19rem;
+}
+
+/*_______________________________________________________*/
+
+.copy-text {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.copy-text:hover {
+  text-decoration: underline;
+}
+
+.copied-message {
+  position: absolute;
+  background: transparent;
+  color: var(--red);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.copied-message.show {
+  opacity: 1;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-stretch: semi-expanded;
+  font-size: 2.3rem;
+  padding-bottom: 4rem;
+  color: var(--red);
+  text-shadow: 0px 0px 3.5px red;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.1rem;
+  display: inline-block; /* Ajoute cette ligne */
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+p,
+.link {
+  padding-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
